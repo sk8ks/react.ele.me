@@ -3,7 +3,7 @@ react仿饿了么项目，用于学习研究react。
 # 技术栈
 webpack3 + react 16 + redux + react-router 4.0 + ES6/7 + fetch + sass + svg
 # 项目运行
-#### 项目中使用ES6/7 等新属性，nodejs 要求 6.0 以上版本，使用node+express搭建本地服务返回交互数据，PM2做部署。
+#### 项目中使用ES6/7 等新属性，nodejs 要求 6.0 以上版本，使用node+express搭建本地服务返回交互数据，PM2做项目运行托管服务。
   npm install -g pm2  安装pm2
 
   git clone https://github.com/sk8ks/react.ele.me.git
