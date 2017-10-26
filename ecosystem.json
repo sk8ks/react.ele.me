@@ -1,0 +1,26 @@
+{
+	"apps" : [
+		{
+			"name"        : "react.ele.me.dev",
+			"script"      : "./scripts/start.js",
+			"cwd" 		  : "",
+			"env": {
+				"COMMON_VARIABLE": "true"
+			},
+			"env_production" : {
+				"NODE_ENV": "development"
+			}
+		},
+		{
+			"name"        : "react.ele.me.server",
+			"script"      : "./server/express.server.js",
+			"cwd" 		  : "",
+			"env": {
+				"COMMON_VARIABLE": "true"
+			},
+			"env_production" : {
+				"NODE_ENV": "development"
+			}
+		}
+	]
+}

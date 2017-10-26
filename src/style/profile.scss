@@ -1,0 +1,130 @@
+@import './mixin.scss';
+.page {
+    @include page;
+}
+.profile-box {
+    @include flex;
+    @include flex-align();
+    @include bgimg;
+    padding: 2rem 1.2rem;
+    color: #fff;
+    .profile-avatar {
+        @include wh(4.6rem, 4.6rem);
+        background-color: #fff;
+        border-radius: 50%;
+        svg {
+            @include wh(4.6rem, 4.6rem);
+        }
+    }
+    .profile-login {
+        margin: 0 0 0 1.3rem;
+        @include item-flex();
+        p.t {
+            margin: 0 0 .8rem;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        p.s {
+            @include flex();
+            @include flex-align();
+            span {
+                margin: 0 0 0 .3rem;
+                color: #fff;
+                font-size: 1.1rem;
+            }
+        }
+        svg {
+            @include wh(1.2rem, 1.2rem);
+            vertical-align: middle;
+        }
+    }
+    .profile-arrow {
+        @include wh(.9rem, .9rem);
+        svg {
+            @include wh(100%, 100%);
+        }
+    }
+}
+.profile-info {
+    display: table;
+    width: 100%;
+    height: 6.8rem;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    a {
+        position: relative;
+        display: table-cell;
+        @include wh(50%, 100%);
+        vertical-align: middle;
+        text-align: center;
+    }
+    a:first-child:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: '';
+        @include wh(1px, 100%);
+        background-color: #ddd;
+    }
+    svg {
+        @include wh(2.2rem, 2.2rem);
+    }
+    p.count {
+        margin: 0 0 .5rem;
+    }
+    span {
+        font-size: 1rem;
+        em {
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+        }
+    }
+    .benefit-amount {
+        em {
+            color: #ff5f3e;
+        }
+    }
+    .point-amount {
+        em {
+            color: #6ac20b;
+        }
+    }
+}
+.profile-center {
+    margin: 1rem 0 0;
+    background-color: #fff;
+    a {
+        @include flex();
+        @include flex-align();
+        padding: 0 0 0 1rem;
+    }
+    aside {
+        @include wh(1.4rem, 1.4rem);
+        margin: 0 1rem 0 0;
+        svg {
+            @include wh(100%, 100%);
+        }
+    }
+    .cont {
+        @include flex();
+        @include flex-align();
+        @include item-flex();
+        @include flex-justify();
+        padding: 1rem 1rem 1rem 0;
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+        border-bottom: #ddd solid 1px;
+        .arrow {
+            @include wh(.9rem, .9rem);
+            svg {
+                @include wh(100%, 100%);
+                fill: #999;
+            }
+        }
+    }
+    a:last-child .cont {
+        border-bottom: 0;
+    }
+
+}

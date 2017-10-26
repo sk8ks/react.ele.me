@@ -1,0 +1,25 @@
+@import './mixin.scss';
+.toast-box {
+    // position: relative;
+}
+.toast.entered {
+    opacity: 1
+}
+.toast.exited {
+    opacity: 0;
+}
+.toast {
+    @include cl;
+    bottom: 20%;
+    z-index: 2000;
+    padding: .9rem 1.7rem;
+    max-width: 50%;
+    text-align: center;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 3rem;
+    font-size: 1rem;
+    color: $fc;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .5s ease;
+}

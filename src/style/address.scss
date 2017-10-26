@@ -1,0 +1,80 @@
+@import './mixin.scss';
+
+.address-panel {
+    @include transform(translate3d(100%,0,0));
+}
+.address-header {
+    position: relative;
+    @include flex();
+    @include flex-align();
+    @include flex-justify();
+    width: 100%;
+    height: 3.666667rem;
+    color: #fff;
+    font-size: .48rem;
+    background: #2395ff;
+    .head-wrapper {
+        @include flex();
+        @include flex-align();
+        @include wh;
+        @include bgimg;
+        .title {
+            padding: 0 3.666667rem;
+            width: 100%;
+            line-height: 3.666667rem;
+            text-align: center;
+            @include font(1.4rem, 3.666667rem);
+            color: $fc;
+        }
+        .btn-back {
+            position: absolute;
+            left: 0;
+            width: 3.666667rem;
+            height: 100%;
+            background-color: transparent;
+            svg {
+                width: 50%;
+                height: 50%;
+                fill: $fc;
+            }
+        }
+    }
+}
+.search-sect {
+    padding: .4rem 2rem 1rem;
+    @include bgimg;
+    input[type="search"] {
+        // margin-top: .4rem;
+        @include wh(100%, 2.5rem);
+        border-radius: 2.5rem;
+        padding: 0 1.5rem;
+        font-size: 1.1rem;
+        color: #333;
+    }
+    input[type=search]::-webkit-input-placeholder{
+        color: #333;
+    }
+    input[type=search]::-webkit-search-cancel-button{
+        // -webkit-appearance: none;
+        // position: relative;
+        // @include wh(1.2rem, 1.2rem);
+        // border-radius: 50%;
+        // background-color: #ebebeb;
+    }
+}
+.address-list {
+    .item {
+        padding: .6rem 1.2rem;
+        border-top: #eee solid 1px;
+        .title {
+            line-height: 1.5;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .info {
+            line-height: 1.5;
+            font-size: 1rem;
+            color: #999;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.loading-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); }
+  .loading-wrap .loading-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1000;
+    width: 4rem;
+    height: 4rem; }
+    .loading-wrap .loading-box .loading-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: url("../assets/loading.circle.png") right center no-repeat;
+      background-size: auto 100%;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      background-position-x: 0;
+      cursor: pointer;
+      -webkit-animation: loading_circle 1.5s normal infinite steps(43);
+      animation: loading_circle 1.5s normal infinite steps(43); }
+
+.loading-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  background: #fff;
+  line-height: 3rem; }
+  .loading-bar svg {
+    display: block;
+    margin: 0 1rem 0 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: loading_more 1s normal infinite;
+    animation: loading_more 1s normal infinite;
+    fill: #999; }
+  .loading-bar span {
+    color: #999; }
+
+@keyframes loading_circle {
+  from {
+    background-position: 0 center; }
+  to {
+    background-position: 100% center; } }
+
+@keyframes loading_more {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn); } }

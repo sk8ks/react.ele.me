@@ -1,0 +1,22 @@
+module.exports = {
+    "activities":[
+        {"attribute":"17.0","description":"新用户下单立减17元(不与其它活动同享)","icon_color":"70bc46","icon_name":"首","id":136134410,"is_exclusive_with_food_activity":true,"name":"麦当劳新用户","tips":"新用户下单立减17元(不与其它活动同享)","type":103}
+    ],
+    "address":"上海市南京西路388号首层B室、二层A，B室",
+    "authentic_id":1381746969626289,
+    "delivery_mode":{"border":"FFFFFF","color":"","id":2,"is_solid":true,"text":"商家配送","text_color":"FFFFFF"},
+    "description":"","distance":657,"favored":false,"float_delivery_fee":9,
+    "float_minimum_order_amount":0,"id":553889,
+    "image_path":"http://rossi.wang:8081/image/ele.me/shoplist/56d597e004abf8d30365009c4492bjpeg.jpeg","is_new":false,"is_premium":true,"is_stock_empty":0,"is_valid":1,
+    "latitude":31.231400236827,"longitude":121.468910029232,"max_applied_quantity_per_order":-1,
+    "name":"上海麦当劳仙乐斯餐厅",
+    "next_business_time":"","only_use_poi":false,
+    "opening_hours":["00:00/04:45","05:15/10:15","10:30/23:55"],
+    "order_lead_time":37,"phone":"4000517117",
+    "piecewise_agent_fee":{
+        "description":"配送费¥9","extra_fee":0,"is_extra":false,"rules":[{"fee":9,"price":0}],"tips":"配送费¥9"
+    },
+    "promotion_info":"","qualification":{"link":"https://h5.ele.me/shop/certification/#/?restaurant_id=1381746969626289\u0026realId=553889","safety_description":"甲级商家"},"rating":4.7,"rating_count":1336,"recent_order_num":2335,"recommend":{"is_ad":false,"reason":""},"regular_customer_count":0,"status":1,
+    "supports":[{"description":"该商家支持开发票，请在下单时填写好发票抬头","icon_color":"999999","icon_name":"票","id":4,"name":"开发票"}],
+    "type":0
+}

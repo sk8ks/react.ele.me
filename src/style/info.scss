@@ -1,0 +1,41 @@
+@import './mixin.scss';
+@import './list.scss';
+.avator-box {
+    @include flex();
+    @include flex-align();
+    .avator-input {
+        display: block;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        @include wh();
+    }
+    .avator {
+        @include wh(4.2rem, 4.2rem);
+        svg {
+            @include wh();
+        }
+    }
+
+}
+.list-username {
+    display: block;
+    line-height: 2rem;
+    font-size: 1.6rem;
+}
+.list-mobile {
+    color: #666;
+}
+.list-password {
+    color: #0097ff;
+}
+.btn-submit {
+    margin: 1.5rem 0 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #fff;
+    color: #ff5339;
+    font-size: 1.3rem;
+    font-weight: 500;
+}

@@ -1,0 +1,12 @@
+module.exports = [
+    {"id":"1322313764866165857","name":"上海国金中心","address":"上海市浦东新区世纪大道8号","short_address":"世纪大道8号","latitude":31.23535,"longitude":121.50292,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy5xp5r8"},
+    {"id":"17586228291530253544","name":"上海国金中心二期","address":"上海市浦东新区世纪大道8号上海国金中心商场F1层","short_address":"世纪大道8号上海国金中心商场F1层","latitude":31.23636,"longitude":121.50235,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy7kczw9"},
+    {"id":"10980264997654437454","name":"上海国金中心一期","address":"上海市浦东新区世纪大道8号","short_address":"世纪大道8号","latitude":31.23658,"longitude":121.50107,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy6qk0s1"},
+    {"id":"14289279761537410947","name":"上海国金中心商场","address":"上海市浦东新区世纪大道8号","short_address":"世纪大道8号","latitude":31.23596,"longitude":121.50305,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy7fdkbx"},
+    {"id":"13752648172316695567","name":"国金汇","address":"上海市浦东新区国金汇酒店公寓豪华型上海市浦东新区世纪大道8号国金中心","short_address":"国金汇酒店公寓豪华型世纪大道8号国金中心","latitude":31.23743,"longitude":121.50211,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sye5hr58"},
+    {"id":"10778178095833401715","name":"国金仓储","address":"上海市宝山区真陈路719","short_address":"真陈路719","latitude":31.29966,"longitude":121.34702,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw613fjwx80"},
+    {"id":"6585221547736587523","name":"上海国金中心商场电动汽车充电站","address":"上海市浦东新区世纪大道8号上海国金中心商场停车场地下1层","short_address":"世纪大道8号上海国金中心商场停车场地下1层","latitude":31.23674,"longitude":121.50321,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy7zjyru"},
+    {"id":"15139287616077159474","name":"国金运输","address":"上海市宝山区真陈路719号5楼","short_address":"真陈路719号5楼","latitude":31.29975,"longitude":121.34719,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw613fq62r1"},
+    {"id":"11990656575038538268","name":"国金中心太平金融","address":"上海市浦东新区陆家嘴环路333号东方汇经中心2F201单元","short_address":"陆家嘴环路333号东方汇经中心2F201单元","latitude":31.23323,"longitude":121.50329,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3svgfzb5d"},
+    {"id":"1003979864021818052","name":"国金中心商场-西二门","address":"上海市浦东新区世纪大道8号国际金融中心F1层","short_address":"世纪大道8号国际金融中心F1层","latitude":31.23644,"longitude":121.5012,"city":"上海市","request_id":"13390160548693022001","city_id":1,"geohash":"wtw3sy6mrnmn"}
+]

@@ -1,0 +1,97 @@
+:global .clear:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+:global .clear {
+  zoom: 1; }
+
+:global .back-img {
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+:global .margin {
+  margin: 0 auto; }
+
+:global .left {
+  float: left; }
+
+:global .right {
+  float: right; }
+
+:global .hide {
+  display: none; }
+
+:global .show {
+  display: block; }
+
+:global .ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+:global .no-scroll {
+  height: 100vh;
+  overflow: hidden; }
+
+:global .animation_opactiy {
+  animation: backOpacity 2s ease-in-out infinite; }
+
+:global .page .wrapper {
+  height: 100%;
+  overflow-y: auto; }
+
+:global .back-up.exiting,
+:global .back-up.entered {
+  opacity: 1; }
+
+:global .back-up.entering,
+:global .back-up.exited {
+  opacity: 0; }
+
+:global .back-up {
+  position: fixed;
+  right: 2rem;
+  bottom: 6rem;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: .05rem solid #999;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s; }
+  :global .back-up svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #999; }
+
+:global .geo-error {
+  margin: 4rem 0 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #6a6a6a; }
+  :global .geo-error img {
+    display: block; }
+  :global .geo-error h4 {
+    margin: 1.2rem 0;
+    font-size: 1.5rem; }
+  :global .geo-error p {
+    color: #999; }

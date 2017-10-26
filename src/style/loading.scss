@@ -1,0 +1,65 @@
+@import './mixin.scss';
+.loading-wrap {
+    @include fixed;
+    z-index: 1001;
+    @include wh(100%, 100%);
+    background-color: rgba(255,255,255,.1);
+    .loading-box {
+        @include center;
+        z-index: 1000;
+        @include wh(4rem, 4rem);
+        .loading-circle {
+            position: absolute;
+            @include wh(100%, 100%);
+            z-index: 10;
+            background: url('../assets/loading.circle.png') right center no-repeat;
+            background-size: auto 100%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            background-position-x: 0;
+            // -webkit-user-select: none;
+            // -moz-user-select: none;
+            // -ms-user-select: none;
+            // user-select: none;
+            cursor: pointer;
+            -webkit-animation: loading_circle 1.5s normal infinite steps(43);
+            animation: loading_circle 1.5s normal infinite steps(43);
+        }
+    }
+}
+.loading-bar {
+    @include flex;
+    @include flex-align;
+    @include flex-justify(center);
+    height: 3rem;
+    background: $fc;
+    line-height: 3rem;
+
+    svg {
+        display: block;
+        margin: 0 1rem 0 0;
+        @include wh(1.6rem, 1.6rem);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-animation: loading_more 1s normal infinite;
+        animation: loading_more 1s normal infinite;
+        fill: #999;
+    }
+    span {
+        color: #999;
+    }
+}
+@keyframes loading_circle {
+    from {
+        background-position: 0 center;
+    }
+    to {
+        background-position: 100% center;
+    }
+}
+@keyframes loading_more {
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}

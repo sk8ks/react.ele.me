@@ -1,0 +1,143 @@
+.shop-menu-wrap {
+  height: calc(100vh - 3.5rem);
+  background-color: #fff; }
+  .shop-menu-wrap .container {
+    padding: 0 0 4rem;
+    height: 100%; }
+
+.shop-menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+  .shop-menu .category {
+    width: 7rem;
+    background-color: #f6f6f6;
+    overflow-y: auto; }
+    .shop-menu .category li {
+      position: relative;
+      padding: 1.3rem .6rem;
+      line-height: 1.5rem;
+      border-bottom: #e6e6e6 solid 1px; }
+      .shop-menu .category li .quantity {
+        position: absolute;
+        right: .2rem;
+        top: .2rem;
+        padding: 0 .36rem;
+        background-image: -webkit-gradient(linear, right top, left top, from(#ff7416), color-stop(98%, #ff3c15));
+        background-image: -webkit-linear-gradient(right, #ff7416, #ff3c15 98%);
+        background-image: linear-gradient(-90deg, #ff7416, #ff3c15 98%);
+        border-radius: .5rem;
+        line-height: 1rem;
+        font-size: .9rem;
+        color: #fff; }
+      .shop-menu .category li .name {
+        font-size: 1.1rem; }
+    .shop-menu .category li.active {
+      background-color: #fff; }
+
+.menu-list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 0 0 1rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; }
+  .menu-list .menu .menu-title {
+    padding: .6rem 1rem .6rem 0;
+    border-bottom: #eee solid 1px; }
+    .menu-list .menu .menu-title .category-name {
+      margin: 0 .4rem 0 0; }
+    .menu-list .menu .menu-title .category-desc {
+      font-size: .9rem;
+      color: #999; }
+  .menu-list .menu .menu-item {
+    position: relative;
+    padding: 1rem 1rem 1rem 0;
+    border-bottom: #eee solid 1px; }
+  .menu-list .menu .menu-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .menu-list .menu .menu-container .logo {
+      margin: 0 .8rem 0 0;
+      width: 6rem;
+      height: 6rem; }
+    .menu-list .menu .menu-container .info {
+      position: relative;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 0 0 2.5rem; }
+      .menu-list .menu .menu-container .info .name {
+        padding: 0 2rem 0 0;
+        line-height: 2rem;
+        font-size: 1.3rem; }
+      .menu-list .menu .menu-container .info .desc {
+        line-height: 1.5rem;
+        width: 15rem;
+        height: 1.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: .9rem;
+        color: #999; }
+      .menu-list .menu .menu-container .info .sales {
+        margin: 0 0 .3rem;
+        line-height: 1.5rem; }
+        .menu-list .menu .menu-container .info .sales span {
+          margin: 0 .8rem 0 0;
+          font-size: 1rem;
+          color: #767676; }
+      .menu-list .menu .menu-container .info .sale-bar {
+        position: absolute;
+        bottom: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%; }
+        .menu-list .menu .menu-container .info .sale-bar .price {
+          color: #f60;
+          font-size: 1.4rem; }
+        .menu-list .menu .menu-container .info .sale-bar .price:before {
+          font-weight: 400;
+          content: '\A5';
+          font-size: .9rem;
+          margin-right: .2;
+          display: inline-block; }
+        .menu-list .menu .menu-container .info .sale-bar .add-shop {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .menu-list .menu .menu-container .info .sale-bar .add-shop .reduce, .menu-list .menu .menu-container .info .sale-bar .add-shop .add, .menu-list .menu .menu-container .info .sale-bar .add-shop .amount {
+            padding: .3rem;
+            display: inline-block;
+            white-space: nowrap; }
+          .menu-list .menu .menu-container .info .sale-bar .add-shop .reduce svg,
+          .menu-list .menu .menu-container .info .sale-bar .add-shop .add svg {
+            width: 1.7rem;
+            height: 1.7rem;
+            fill: #2395ff; }
+          .menu-list .menu .menu-container .info .sale-bar .add-shop .amount {
+            padding: 0 .3rem;
+            min-width: 2rem;
+            max-width: 3.4rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1; }

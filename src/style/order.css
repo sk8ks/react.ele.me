@@ -1,0 +1,50 @@
+.no-data-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  font-size: 1.3rem; }
+  .no-data-wrapper img {
+    display: block;
+    margin: 0 auto; }
+  .no-data-wrapper p {
+    margin: 1.1rem 0;
+    line-height: 1.6rem;
+    font-size: 1.4rem;
+    color: #666; }
+  .no-data-wrapper .login-btn {
+    padding: .8rem;
+    min-width: 9rem;
+    border: 0;
+    border-radius: .1rem;
+    background-color: #56d176;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: inherit; }
+
+.no-data-wrapper.no-data img {
+  width: 16rem;
+  height: 16rem; }
+
+.no-data-wrapper.no-data .history-btn {
+  color: #999;
+  font-size: 1rem; }
+  .no-data-wrapper.no-data .history-btn svg {
+    margin-left: .5rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    transform: rotate(90deg); }

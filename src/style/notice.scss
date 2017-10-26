@@ -1,0 +1,33 @@
+@import './mixin.scss';
+.message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    min-height: 4rem;
+    background-color: $fc;
+    border-radius: .3rem;
+    box-shadow: 0 0 .6rem rgba(0,0,0,.2);
+    @include transition;
+    @include transform(translate3d(2.5%, -100%, 0));
+    font-size: 1rem;
+    .hd {
+        padding: 0 1rem;
+        line-height: 2.2rem;
+        font-size: .9rem;
+        background-color: #fff;
+        border-radius: .3rem .3rem 0;
+    }
+    .bd {
+        padding: .6rem 1rem;
+        background-color: #fcfcfc;
+        border-radius: 0 .3rem .3rem;
+    }
+}
+.message.entered {
+    @include transform(translate3d(2.5%, .5rem, 0));
+}
+.message.exited {
+    @include transform(translate3d(2.5%, -100%, 0));
+}

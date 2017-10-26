@@ -1,0 +1,16 @@
+@import './mixin.scss';
+.curtain.exiting,
+.curtain.entered {
+    @include transform(translate3d(0,0,0));
+    @include transition();
+}
+.curtain.entering,
+.curtain.exited,
+.curtain {
+    @include transform(translate3d(100%,0,0));
+
+}
+.curtain {
+    @include popup;
+    @include transition();
+}

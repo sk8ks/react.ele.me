@@ -1,0 +1,96 @@
+@import './mixin.scss';
+// .scroll-wrapper {
+// 	height: 100%;
+// }
+.geo-header {
+	@include flex;
+	margin-top: -.2rem;
+	padding: 1rem 1.2rem 0;
+	height: 4rem;
+	@include bgimg;
+	.get-address {
+		@include flex;
+		@include flex-align;
+		max-width: 60%;
+	    span {
+			margin: 0 .3rem;
+			max-width: 80%;
+			// width: 100%;
+			height: 1.5rem;
+			line-height: 1.5rem;
+	    	color: $fc;
+			font-weight: 500;
+	    	font-size: 1.4rem;
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			// word-wrap: normal;
+			word-break: keep-all;
+			white-space: nowrap;
+	    }
+		.location {
+			width: 1.3rem;
+			height: 1.3rem;
+		}
+		.arrow-down {
+			width: .5rem;
+			height: .5rem;
+		}
+	}
+}
+
+.head-search {
+	@include sticky;
+	z-index: 200;
+	.head-search-bar {
+		margin-top: -.4rem;
+		padding: .8rem 1.194667rem;
+		@include bgimg;
+	}
+}
+
+.search-bar {
+	display: block;
+	// margin: .8rem 0;
+	width: 100%;
+	height: 3rem;
+	text-align: center;
+	// border-radius: 3rem;
+	box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,.2);
+	color: #333;
+	font-size: 1.2rem;
+}
+.hot-search {
+	@include flex;
+	@include flex-align;
+	margin-top: -.2rem;
+	padding: .8rem 1.2rem 1rem;
+	white-space: nowrap;
+	@include bgimg;
+	border: none;
+	.hot-search-bar {
+		line-height: 1.2rem;
+		overflow-x: auto;
+	}
+	a {
+		margin: 0 .6rem;
+		color: $fc;
+	}
+}
+// 区块
+.sect-title {
+	margin-top: .853333rem;
+	line-height: 2.986667rem;
+	font-weight: 600;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	font-size: 1.2rem;
+	padding-left: .853333rem;
+	background-color: $fc;
+}
+.restaurant-sect {
+	padding: 0 0 4rem;
+	// height: 'auto';
+}
+.restaurant-sect.loading {
+	height: 100%;
+}

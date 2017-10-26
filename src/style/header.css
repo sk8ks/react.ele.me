@@ -1,0 +1,47 @@
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 3.66667rem;
+  color: #fff;
+  font-size: .48rem;
+  background-color: #2395ff; }
+  .header .head-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(left, #0af, #0085ff);
+    background-image: linear-gradient(90deg, #0af, #0085ff); }
+    .header .head-wrapper .title {
+      padding: 0 3.666667rem;
+      width: 100%;
+      height: 100%;
+      line-height: 3.666667rem;
+      text-align: center;
+      font: 1.4rem/3.66667rem "'Helvetica Neue',Tahoma,Arial,'Microsoft Yahei',sans-serif";
+      font-weight: 500;
+      color: #fff; }
+    .header .head-wrapper .btn-back {
+      position: absolute;
+      left: 0;
+      width: 3.66667rem;
+      height: 3.66667rem;
+      background-color: transparent; }
+      .header .head-wrapper .btn-back svg {
+        width: 40%;
+        height: 40%;
+        fill: #fff; }

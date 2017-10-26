@@ -1,0 +1,219 @@
+@import './mixin.scss';
+.shop-cart {
+
+}
+.shop-mask.exiting,
+.shop-mask.entered {
+    opacity: 0.4;
+}
+.shop-mask.entering,
+.shop-mask.exited,
+.shop-mask {
+    opacity: 0;
+
+}
+.shop-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #000;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+.cart-wraper {
+    background-color: #fff;
+
+    .cart-discount {
+        position: fixed;
+        bottom: 4rem;
+        left: 0;
+        z-index: 110;
+        width: 100%;
+        background-color: #fffad6;
+        border-top: 1px solid #f9e8a3;
+        opacity: .96;
+        line-height: 2rem;
+        font-size: .8rem;
+        text-align: center;
+    }
+    .cart-list-wraper {
+        position: fixed;
+        bottom: 4rem;
+        left: 0;
+        z-index: 110;
+        width: 100%;
+        @include transition;
+        @include transform(translate3d(0,100%,0));
+        .cart-header {
+            @include flex;
+            @include flex-align;
+            padding: 0 .8rem;
+            background-color: #eceff1;
+            height: 3.6rem;
+            .title {
+                @include box-flex;
+                font-size: 1.4rem;
+            }
+            .clear {
+
+            }
+        }
+        .cart-list-scroller {
+            max-height: 25rem;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .cart-list {
+            .cart-item {
+                padding: 1rem;
+                @include flex;
+                @include flex-align;
+                border-bottom: #eee solid 1px;
+                .info-bar {
+                    @include box-flex(6);
+                    overflow: hidden;
+                    .name {
+                        width: 100%;
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        vertical-align: middle;
+                    }
+                    .desc {
+                        font-size: .9rem;
+                        color: #999;
+                    }
+                }
+                .sale-bar {
+                    @include box-flex(2.5);
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    text-align: right;
+                    white-space: nowrap;
+                    .price {
+                        color: #f60;
+                    }
+                    .price:before {
+                        content: "\A5";
+                        font-size: .8rem;
+                        color: currentColor;
+                    }
+                }
+
+                .cart-bar {
+                    @include flex;
+                    @include flex-align();
+                    @include flex-justify(flex-end);
+                    @include box-flex(3);
+                    text-align: right;
+                    .reduce, .add, .amount {
+                        padding: .3rem;
+                        display: inline-block;
+                        white-space: nowrap;
+                    }
+                    .reduce svg,
+                    .add svg {
+                        @include wh(1.7rem, 1.7rem);
+                        fill: #2395ff;
+                    }
+                    .amount {
+                        padding: 0 .3rem;
+                        min-width: 2rem;
+                        max-width: 3.4rem;
+                        text-align: center;
+                        font-size: 1.1rem;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+    .cart-list-wraper.active {
+        @include transform(translate3d(0,0,0));
+    }
+}
+
+.cart-footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 110;
+    @include flex;
+    @include flex-align;
+    @include flex-justify(center);
+    @include wh(100%, 4rem);
+    padding: 0 0 0 7rem;
+    background-color: rgba(61, 61, 63, 0.9);
+    .cart-btn {
+        position: absolute;
+        left: 1rem;
+        bottom: .7rem;
+        @include wh(4.2rem, 4.2rem);
+        border-radius: 100%;
+        background-color: #333;
+        border: .4rem solid #444;
+        -webkit-box-shadow: 0 -0.08rem 0.053333rem 0 rgba(0,0,0,.1);
+        box-shadow: 0 -0.08rem 0.053333rem 0 rgba(0,0,0,.1);
+        will-change: transform;
+    }
+    .cart-btn.active {
+        background-color: #3190e8
+    }
+    .cart-btn:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('http://rossi.wang:8081/image/ele.me/cart.svg') center no-repeat;
+        background-size: 1.8rem;
+        content: "";
+    }
+    .cart-btn em:before {
+        position: absolute;
+        top: -.5rem;
+        right: -.2rem;
+        // @include wh(1.2rem, 1.2rem);
+        padding: .1rem .4rem;
+        border-radius: .6rem;
+        background-image: -webkit-gradient(linear,right top,left top,from(#ff7416),color-stop(98%,#ff3c15));
+        background-image: -webkit-linear-gradient(right,#ff7416,#ff3c15 98%);
+        background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
+        content: attr(data-amount);
+        line-height: 1rem;
+        color: #fff;
+        text-align: center;
+        font-style: normal;
+        font-size: .9rem;
+    }
+    .cart-info {
+        @include box-flex;
+        .total {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .delivery {
+            color: #999;
+            font-size: .8rem;
+        }
+    }
+    .cart-submit {
+        @include wh(8rem, 100%);
+        background-color: #4cd964;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 4rem;
+    }
+    .cart-submit.disabled {
+        background-color: #666;
+    }
+}

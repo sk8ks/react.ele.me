@@ -1,0 +1,137 @@
+.page {
+  width: 100%;
+  height: 100%; }
+
+.profile-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: -webkit-linear-gradient(left, #0af, #0085ff);
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  padding: 2rem 1.2rem;
+  color: #fff; }
+  .profile-box .profile-avatar {
+    width: 4.6rem;
+    height: 4.6rem;
+    background-color: #fff;
+    border-radius: 50%; }
+    .profile-box .profile-avatar svg {
+      width: 4.6rem;
+      height: 4.6rem; }
+  .profile-box .profile-login {
+    margin: 0 0 0 1.3rem;
+    flex: 1 1 0; }
+    .profile-box .profile-login p.t {
+      margin: 0 0 .8rem;
+      color: #fff;
+      font-size: 1.8rem; }
+    .profile-box .profile-login p.s {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .profile-box .profile-login p.s span {
+        margin: 0 0 0 .3rem;
+        color: #fff;
+        font-size: 1.1rem; }
+    .profile-box .profile-login svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      vertical-align: middle; }
+  .profile-box .profile-arrow {
+    width: 0.9rem;
+    height: 0.9rem; }
+    .profile-box .profile-arrow svg {
+      width: 100%;
+      height: 100%; }
+
+.profile-info {
+  display: table;
+  width: 100%;
+  height: 6.8rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff; }
+  .profile-info a {
+    position: relative;
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center; }
+  .profile-info a:first-child:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: #ddd; }
+  .profile-info svg {
+    width: 2.2rem;
+    height: 2.2rem; }
+  .profile-info p.count {
+    margin: 0 0 .5rem; }
+  .profile-info span {
+    font-size: 1rem; }
+    .profile-info span em {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700; }
+  .profile-info .benefit-amount em {
+    color: #ff5f3e; }
+  .profile-info .point-amount em {
+    color: #6ac20b; }
+
+.profile-center {
+  margin: 1rem 0 0;
+  background-color: #fff; }
+  .profile-center a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 0 0 1rem; }
+  .profile-center aside {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 1rem 0 0; }
+    .profile-center aside svg {
+      width: 100%;
+      height: 100%; }
+  .profile-center .cont {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex: 1 1 0;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 0;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    border-bottom: #ddd solid 1px; }
+    .profile-center .cont .arrow {
+      width: 0.9rem;
+      height: 0.9rem; }
+      .profile-center .cont .arrow svg {
+        width: 100%;
+        height: 100%;
+        fill: #999; }
+  .profile-center a:last-child .cont {
+    border-bottom: 0; }

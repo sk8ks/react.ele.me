@@ -1,0 +1,14 @@
+@import './mixin.scss';
+.page {
+    @include page;
+}
+.page-aside {
+    padding-top: 7.06667rem;
+}
+.header-aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    @include wh(100%, 6.66667rem);
+}

@@ -1,0 +1,30 @@
+@import './mixin.scss';
+.list-box {
+    width: 100%;
+    background-color: #fff;
+    font-size: 1.3rem;
+    color: #333;
+}
+.list-item {
+    position: relative;
+    padding: 1.2rem;
+    @include flex();
+    @include flex-align();
+    @include flex-justify();
+    border-bottom: #eee solid 1px;
+    .list-arrow {
+        display: inline-block;
+        @include wh(1.6rem, 1rem);
+        fill: #999;
+    }
+}
+.list-title {
+    margin: 1.1rem 0 .8rem .8rem;
+    font-size: .9rem;
+    color: #999;
+}
+.icon-mobile {
+    margin: 0 .5rem 0 0;
+    @include wh(1.2rem, 1.2rem);
+    fill: rgb(0, 151, 255);
+}

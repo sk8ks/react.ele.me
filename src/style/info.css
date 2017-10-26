@@ -1,0 +1,79 @@
+.list-box {
+  width: 100%;
+  background-color: #fff;
+  font-size: 1.3rem;
+  color: #333; }
+
+.list-item {
+  position: relative;
+  padding: 1.2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #eee solid 1px; }
+  .list-item .list-arrow {
+    display: inline-block;
+    width: 1.6rem;
+    height: 1rem;
+    fill: #999; }
+
+.list-title {
+  margin: 1.1rem 0 .8rem .8rem;
+  font-size: .9rem;
+  color: #999; }
+
+.icon-mobile {
+  margin: 0 .5rem 0 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #0097ff; }
+
+.avator-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .avator-box .avator-input {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .avator-box .avator {
+    width: 4.2rem;
+    height: 4.2rem; }
+    .avator-box .avator svg {
+      width: 100%;
+      height: 100%; }
+
+.list-username {
+  display: block;
+  line-height: 2rem;
+  font-size: 1.6rem; }
+
+.list-mobile {
+  color: #666; }
+
+.list-password {
+  color: #0097ff; }
+
+.btn-submit {
+  margin: 1.5rem 0 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #fff;
+  color: #ff5339;
+  font-size: 1.3rem;
+  font-weight: 500; }

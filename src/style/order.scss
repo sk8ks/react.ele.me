@@ -1,0 +1,44 @@
+@import './mixin.scss';
+.no-data-wrapper {
+    @include flex;
+    @include center;
+    @include flex-direction(column);
+    @include flex-align;
+    @include wh(100%, 60%);
+    font-size: 1.3rem;
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    p {
+        margin: 1.1rem 0;
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+        color: #666;
+    }
+    .login-btn {
+        padding: .8rem;
+        min-width: 9rem;
+        border: 0;
+        border-radius: .1rem;
+        background-color: #56d176;
+        color: #fff;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family: inherit;
+    }
+}
+.no-data-wrapper.no-data {
+    img {
+        @include wh(16rem, 16rem);
+    }
+    .history-btn {
+        color: #999;
+        font-size: 1rem;
+        svg {
+            margin-left: .5rem;
+            @include wh(.6rem, .6rem);
+            @include transform(rotate(90deg));
+        }
+    }
+}

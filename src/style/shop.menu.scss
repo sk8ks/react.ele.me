@@ -1,0 +1,149 @@
+@import './mixin.scss';
+.shop-menu-wrap {
+    height: calc(100vh - 3.5rem);
+    background-color: #fff;
+    .container {
+        padding: 0 0 4rem;
+        height: 100%;
+    }
+}
+.shop-menu {
+    @include flex;
+    height: 100%;
+    .category {
+        width: 7rem;
+        background-color: #f6f6f6;
+        overflow-y: auto;
+        li {
+            position: relative;
+            padding: 1.3rem .6rem;
+            line-height: 1.5rem;
+            border-bottom: #e6e6e6 solid 1px;
+            .quantity {
+                position: absolute;
+                right: .2rem;
+                top: .2rem;
+                padding: 0 .36rem;
+                // @include wh(1rem, 1rem);
+                background-image: -webkit-gradient(linear,right top,left top,from(#ff7416),color-stop(98%,#ff3c15));
+                background-image: -webkit-linear-gradient(right,#ff7416,#ff3c15 98%);
+                background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
+                border-radius: .5rem;
+                line-height: 1rem;
+                font-size: .9rem;
+                color: #fff;
+            }
+            .name {
+                font-size: 1.1rem;
+            }
+        }
+        li.active {
+            background-color: #fff;
+        }
+    }
+
+}
+.menu-list {
+    @include box-flex();
+    padding: 0 0 0 1rem;
+    @include wh();
+    overflow-y: auto;
+    .menu-scroller {
+
+    }
+    .menu {
+        .menu-title {
+            padding: .6rem 1rem .6rem 0;
+            border-bottom: #eee solid 1px;
+            .category-name {
+                margin: 0 .4rem 0 0;
+            }
+            .category-desc {
+                font-size: .9rem;
+                color: #999;
+            }
+        }
+        .menu-item {
+            position: relative;
+            padding: 1rem 1rem 1rem 0;
+            border-bottom: #eee solid 1px;
+        }
+        .menu-container {
+            @include flex;
+            .logo {
+                margin: 0 .8rem 0 0;
+                @include wh(6rem, 6rem);
+            }
+            .info {
+                position: relative;
+                @include box-flex();
+                padding: 0 0 2.5rem;
+                .name {
+                    padding: 0 2rem 0 0;
+                    line-height: 2rem;
+                    font-size: 1.3rem;
+                    // font-weight: 500;
+                }
+                .desc {
+                    line-height: 1.5rem;
+                    @include wh(15rem, 1.5rem);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: .9rem;
+                    color: #999;
+                }
+                .sales {
+                    margin: 0 0 .3rem;
+                    line-height: 1.5rem;
+                    span {
+                        margin: 0 .8rem 0 0;
+                        font-size: 1rem;
+                        color: #767676;
+                    }
+                }
+                .sale-bar {
+                    position: absolute;
+                    bottom: 0;
+                    @include flex;
+                    @include flex-justify();
+                    @include flex-align;
+                    width: 100%;
+                    .price {
+                        color: #f60;
+                        font-size: 1.4rem;
+                    }
+                    .price:before {
+                        font-weight: 400;
+                        content: '\A5';
+                        font-size: .9rem;
+                        margin-right: .2;
+                        display: inline-block;
+                    }
+                    .add-shop {
+                        @include flex;
+                        @include flex-align;
+                        .reduce, .add, .amount {
+                            padding: .3rem;
+                            display: inline-block;
+                            white-space: nowrap;
+                        }
+                        .reduce svg,
+                        .add svg {
+                            @include wh(1.7rem, 1.7rem);
+                            fill: #2395ff;
+                        }
+                        .amount {
+                            padding: 0 .3rem;
+                            min-width: 2rem;
+                            max-width: 3.4rem;
+                            text-align: center;
+                            font-size: 1.1rem;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

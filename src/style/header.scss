@@ -1,0 +1,44 @@
+@import './mixin.scss';
+.header {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index: 900;
+    // position: sticky;
+    // top: 0;
+    // z-index: 900;
+    @include flex();
+    @include flex-align();
+    @include flex-justify();
+    @include wh(100%, 3.666667rem);
+    color: #fff;
+    font-size: .48rem;
+    background-color: #2395ff;
+    .head-wrapper {
+        @include flex();
+        @include flex-align();
+        @include wh(100%, 100%);
+        @include bgimg;
+
+        .title {
+            padding: 0 3.666667rem;
+            @include wh(100%, 100%);
+            line-height: 3.666667rem;
+            text-align: center;
+            @include font(1.4rem, 3.666667rem);
+            font-weight: 500;
+            color: $fc;
+        }
+        .btn-back {
+            position: absolute;
+            left: 0;
+            @include wh(3.666667rem, 3.666667rem);
+            background-color: transparent;
+            svg {
+                width: 40%;
+                height: 40%;
+                fill: $fc;
+            }
+        }
+    }
+}
