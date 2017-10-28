@@ -33,13 +33,11 @@ class Entries extends PureComponent {
         loadStatus: PropTypes.bool.isRequired,
         entries: PropTypes.array.isRequired,
         geohash: PropTypes.string,
-        location: PropTypes.object,
     }
     static defaultProps = {
         loadStatus: !1,
         entries: [],
         geohash: '',
-        location: {},
     }
     render() {
         const { loadStatus, entries, geohash } = this.props;

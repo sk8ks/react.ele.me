@@ -48,18 +48,18 @@ class ActivityIndicator extends PureComponent {
 
 ActivityIndicator.open = props => {
     let parent = document.createElement('div');
-    parent.className = loadingStyle['activity-indicator-box'];
+    // parent.className = loadingStyle['activity-indicator-box'];
     document.body.appendChild(parent);
-    // const component = ReactDOM.render(<ActivityIndicator {...props} />, parent);
+    const component = ReactDOM.render(<ActivityIndicator {...props} />, parent);
     ActivityIndicator.parent = parent;
-    // ActivityIndicator.component = component;
-    // component.open();
+    ActivityIndicator.component = component;
+    component.open();
 }
 ActivityIndicator.close = () => {
     if (ActivityIndicator.parent) {
-        // ActivityIndicator.component.close();
-        ReactDOM.unmountComponentAtNode(ActivityIndicator.parent);
-        document.body.removeChild(ActivityIndicator.parent);
+        // ReactDOM.unmountComponentAtNode(ActivityIndicator.parent);
+        ActivityIndicator.component.close();
+        // document.body.removeChild(ActivityIndicator.parent);
     }
 }
 

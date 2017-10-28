@@ -1,7 +1,7 @@
 /**
  * 由于当前组件是应用入口，从优化角度来说，提升首屏加载尤为重要，后续更新将会使用ssr方式替代
  */
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -15,6 +15,7 @@ import InfiniteScroll from '../../components/common/InfiniteScroll';
 import ActivityIndicator from '../../components/feedback/ActivityIndicator';
 import BackUp from '../../components/common/BackUp';
 
+import { arrayShallowComparison } from '../../utils/utils';
 import {
     authenticatedAction,
     coordinatesAction,
@@ -29,11 +30,13 @@ import loadingStyle from '../../style/loading.css';
 import errorPlaceholder from "../../assets/4efda8c6bf4734d39faf86fe190c3gif.gif";
 
 // 地理位置组件
-const Address = props => {
-    const { geo: { address } } = props;
-    return (
-        <span>{address ? address : '获取地址中...'}</span>
-    );
+class Address extends PureComponent {
+    render() {
+        const { address } = this.props;
+        return (
+            <span>{address ? address : '获取地址中...'}</span>
+        );
+    }
 }
 // 地理信息获取失败时显示
 const GEOError = props => {
@@ -46,18 +49,19 @@ const GEOError = props => {
     );
 }
 // 热搜词汇组件
-const HotSearchWords = props => {
-    const { hotSearchWords } = props;
-    const listItems = hotSearchWords.length ? hotSearchWords.map((item, index) => <a key={index}>{item.word}</a>) : [];
-    return (
-        <div className={homeStyle['hot-search']}>
-            <div className={homeStyle['hot-search-bar']}>{listItems}</div>
-        </div>
-    )
+class HotSearchWords extends PureComponent {
+    render() {
+        const { hotSearchWords } = this.props;
+        const listItems = hotSearchWords.length ? hotSearchWords.map((item, index) => <a key={index}>{item.word}</a>) : [];
+        return (
+            <div className={homeStyle['hot-search']}>
+                <div className={homeStyle['hot-search-bar']}>{listItems}</div>
+            </div>
+        )
+    }
 }
 // 加载更多
 const LoadMore = props => {
-    // const { status } = props;
     return(
         <div className={loadingStyle['loading-bar']}>
             <svg >
@@ -85,7 +89,6 @@ class Home extends Component {
 
     componentDidMount = () => {
         const { coordinates, authenticatedAction } = this.props;
-
         authenticatedAction();
         // 如有地理坐标则尝试地址更新
         if (coordinates.latitude && coordinates.longitude) {
@@ -105,24 +108,23 @@ class Home extends Component {
      * @return {[type]}             [description]
      */
     geoUpdate = (coords = {}) => {
-        const { coordinates, getEntries, getHotSearchWords, getRestaurants } = this.props;
+        // const { coordinates, getEntries, getHotSearchWords, getRestaurants } = this.props;
         // 如地理信息一致，且数据存在则读取缓存数据，否则请求新数据
-        if (coordinates.latitude === coords.latitude && coordinates.longitude === coords.longitude) {
-            const restaurants = getRestaurants();
-            const entries = getEntries();
-            const hotSearchWords = getHotSearchWords();
-            if (!restaurants.length) {
-                this.addressUpdate(coords);
-            } else {
-                this.setState({entries, hotSearchWords, restaurants});
-                this.setState({entryLoadStatus: !!1});
-            }
-        } else {    // 如果地理信息不一致则重新获取地理信息并请求数据
-            this.addressUpdate(coords);
-        }
+        // if (coordinates.latitude === coords.latitude && coordinates.longitude === coords.longitude) {
+        //     const restaurants = getRestaurants();
+        //     const entries = getEntries();
+        //     const hotSearchWords = getHotSearchWords();
+        //     if (!restaurants.length) {
+        //         this.addressUpdate(coords);
+        //     } else {
+        //         this.setState({entries, hotSearchWords, restaurants});
+        //         this.setState({entryLoadStatus: !!1});
+        //     }
+        // } else {    // 如果地理信息不一致则重新获取地理信息并请求数据
+        //     this.addressUpdate(coords);
+        // }
+        this.addressUpdate(coords);
     }
-
-
 
     // 地址搜索面板打开
     addressSearchOpen = () => {
@@ -145,21 +147,18 @@ class Home extends Component {
             if (geo) {
                 this.setState({geoStatus: !!1});
                 hotSearchWordsAction(coords)
-                    .then(() => {
-                        const hotSearchWords = getHotSearchWords();
-                        this.setState(prevState => ({hotSearchWords}));
+                    .then(res => {
+                        this.setState({hotSearchWords: getHotSearchWords()});
                     });
                 entriesAction(coords)
-                    .then(() => {
-                        const entries = getEntries();
-                        this.setState({entryLoadStatus: !!1, entries: entries});
+                    .then(res => {
+                        this.setState({entryLoadStatus: !!1, entries: getEntries()});
                     });
                 fetchRestaurantListAction({...coords, offset: 0, limit: 20})
                     .then(res => {
                         const restaurants = getRestaurants();
-                        this.setState({restaurants});
+                        this.setState({restaurants, hasMore: !!restaurants.length});
                         ActivityIndicator.close();
-                        this.setState({hasMore: !!res.length});
                     });
             }
         })
@@ -174,8 +173,7 @@ class Home extends Component {
         this.setState({isLoading: !!1});
         fetchRestaurantListAction({...coordinates, offset: pageNumber*20, limit: 20})
             .then(res => {
-                const restaurants = getRestaurants();
-                this.setState({restaurants, hasMore: !!res.length, isLoading: !1});
+                this.setState({restaurants: getRestaurants(), hasMore: !!res.length, isLoading: !1});
             });
     }
     render() {
@@ -191,7 +189,7 @@ class Home extends Component {
                                 <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#location"></use>
                             </svg>
                             {/* 地理信息 */}
-							<Address geo={geoLocation} />
+							<Address address={geoLocation.name} />
 							<svg styleName="arrow-down"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#arrow_down"></use></svg>
 						</div>
 					</header>

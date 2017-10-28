@@ -22,7 +22,6 @@ class InfiniteScroll extends Component {
         pageStart: PropTypes.number,
         // ref: PropTypes.func,
         threshold: PropTypes.number,
-        useWindow: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -31,7 +30,6 @@ class InfiniteScroll extends Component {
         pageStart: 0,
         // ref: null,
         threshold: 200,
-        useWindow: true,
         loader: null,
     };
     componentDidMount = () => {
