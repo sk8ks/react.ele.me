@@ -53,19 +53,6 @@ export const array2Object = (arr = [], obj = {}) => {
 					Object.assign(obj, v) : Object.defineProperty(obj, i, {value: v});
 		}) : Object.defineProperty(obj, 0, {value: arr});
 	return obj;
-
-
-	// if (Array.isArray(arr)) {
-	// 	arr.forEach((v,i,a) => {
-	// 		if (Array.isArray(v)) {
-	// 			Object.assign(_obj_, array2Object(v, obj));
-	// 		} else if (typeof v === 'object') {
-	// 			Object.assign(_obj_, v);console.log(_obj_, v)
-	// 		} else {
-	// 			Object.defineProperty(_obj_, i, {value: v});
-	// 		}
-	// 	})
-	// }
 }
 
 /**
@@ -78,7 +65,6 @@ export const obj2Array = source => {
 	}
 	return target;
 }
-
 
 /**
  * 存储localStorage
