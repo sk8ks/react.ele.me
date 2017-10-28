@@ -32,43 +32,32 @@ export const geolocationAction = (coordinates) =>
     async dispatch => {
         try {
             const geo = await fetchGeolocation(coordinates);
-            // const geoState = getState().geoLocation;
-            setStore('COORDS', coordinates);
-            dispatch(actions.successCoordinates(coordinates));
-            dispatch(actions.successGEO(geo));
+            if (geo) {
+                setStore('COORDS', coordinates);
+                dispatch(actions.successCoordinates(coordinates));
+                dispatch(actions.successGEO(geo));
+            }
             return geo;
         } catch (error) {
-            throw new Error(error);
+            return null;
+            console.error(error);
         }
 
     }
 
-// 热门搜索词汇
-// export const hotSearchWordsAction = (coordinates = {}) => {
-//     return dispatch => {
-//         fetchHotSearchWords(coordinates)
-//                 .then(res => dispatch(actions.successHotSearchWords(res)))
-//                 .catch(error => dispatch(actions.failHotSearchWords()))
-//     }
-// }
 export const hotSearchWordsAction = async (coordinates = {}) => {
     try {
         const res = await fetchHotSearchWords(coordinates);
         if (res && res.length) {
             localStore.setHotSearchWords(res);
-            return res;
         }
+        return res;
     } catch (error) {
-        throw new Error(error);
+        return null;
+        console.error(error);
     }
 }
-// 分类入口
-// export const entriesAction = () =>
-//     dispatch => {
-//         return fetchEntries()
-//                 .then(res => dispatch(actions.successEntries(res.entries)))
-//                 .catch(error => dispatch(actions.failEntries()))
-//     }
+
 export const entriesAction = async (coordinates = {}) => {
     try {
         const { entries } = await fetchEntries(coordinates);
@@ -143,10 +132,9 @@ export const authenticatedAction = () =>
             const res = await fetchAuthenticated();
             if (res.userid) {
                 dispatch(actions.successAuthentication(res));
-                return res;
             }
+            return res;
         } catch (error) {
-            // dispatch(actions.failAuthentication({}));
             throw new Error(error);
         }
     }
@@ -159,23 +147,20 @@ export const userInfoAction = uid =>
             const res = await fetchUserInfo(uid);
             if (res) {
                 dispatch(actions.successUserInfo(res));
-                return res;
             }
+            return res;
         } catch (error) {
-            // dispatch(actions.failUserInfo());
             throw new Error(error);
         }
     }
 // 用户信息
-export const sendVcodeAction = mobile =>
-    async dispatch => {
-        try {
-            return await fetchVerifyCode(mobile);
-        } catch (error) {
-            // dispatch(actions.failUserInfo());
-            throw new Error(error);
-        }
+export const sendVcodeAction = async mobile => {
+    try {
+        return await fetchVerifyCode(mobile);
+    } catch (error) {
+        throw new Error(error);
     }
+}
 // 登录
 export const loginAction = query =>
     async dispatch => {
@@ -188,7 +173,6 @@ export const loginAction = query =>
             }
             return res;
         } catch (error) {
-            dispatch(actions.failAuthentication());
             throw new Error(error);
         }
     }
@@ -197,13 +181,13 @@ export const logoutAction = query =>
     async dispatch => {
         try {
             const res = await logout(query);
-            if (res && !res.login) {
+            if (res && res.logout) {
                 removeCookies('token');
                 removeCookies('userid');
                 dispatch(actions.failAuthentication());
                 dispatch(actions.failUserInfo());
-                return res;
             }
+            return res;
         } catch (error) {
             throw new Error(error);
         }
