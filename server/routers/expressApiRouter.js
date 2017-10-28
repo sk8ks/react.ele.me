@@ -24,7 +24,6 @@ const shuffle = require('../utils/shuffle');
 
 // 手机验证码
 router.post('/mobile/verify_code', (req, res, next) => {
-    // const {username, password} = req.body;
     res.json(vcode);
 });
 
@@ -59,11 +58,11 @@ router.post('/login', (req, res, next) => {
 // 退出登录
 router.post('/logout', (req, res, next) => {
     const userid = req.body.userid;
-    if ( loginUser.user_id == userid ) {
+    if ( loginUser.userInfo.user_id == userid ) {
         // res.cookie('token', loginUser.token, {maxAge: 0, path: '/'});
         // res.cookie('userid', loginUser.userInfo.user_id, {maxAge: 0, path: '/'});
         res.json({
-            login: !1
+            logout: !!1
         });
     } else {
         res.json({
@@ -85,12 +84,20 @@ router.get('/user/:uid', (req, res, next) => {
     if (req.params.uid) {
         res.json(loginUser.userInfo);
     } else {
-        res.json({})
+        res.json({});
     }
 });
 // 地理信息
 router.get('/reverse_geo_coding', (req, res, next) => {
-    res.json(geolocation);
+    const geo = geolocation.find(it => {
+        return it.latitude == req.query.latitude && it.longitude == req.query.longitude
+    });
+    if (geo) {
+        res.json(geo);
+    } else {
+        res.json({});
+    }
+
 });
 // 食品分类入口
 router.get('/entries', (req, res, next) => {
